@@ -1,0 +1,16 @@
+{
+  "id": "healthcare-clinic",
+  "name": "Healthcare Clinic",
+  "industry": "healthcare",
+  "tags": ["medical practice", "dental", "clinic", "doctor", "physical therapy", "urgent care", "primary care", "pediatrics", "dermatology", "locations"],
+  "description": "Professional, trustworthy design for medical and dental practices with physical locations. Features location finder, insurance info, and appointment booking. Inspired by Oak Street Health.",
+  "status": "approved",
+  "pages": ["home", "about", "services", "locations", "blog", "contact", "faq"],
+  "contentCollections": ["team", "services", "testimonials", "blog", "faq", "locations"],
+  "previewUrl": null,
+  "sourceInspiration": "https://www.oakstreethealth.com",
+  "createdAt": "2026-01-17",
+  "updatedAt": "2026-01-17",
+  "approvedAt": "2026-01-18",
+  "approvedBy": "user"
+}

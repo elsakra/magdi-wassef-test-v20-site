@@ -1,0 +1,115 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import siteData from '@/data/site.json';
+
+const { company } = siteData;
+const lastUpdated = "January 1, 2024";
+---
+
+<BaseLayout title="Terms of Service">
+  <section class="pt-32 pb-16 bg-gradient-to-b from-primary-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900">
+        Terms of Service
+      </h1>
+      <p class="mt-4 text-slate-600">
+        Last updated: {lastUpdated}
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-slate prose-lg max-w-none prose-headings:font-display">
+        <p class="lead">
+          Welcome to {company.name}. These Terms of Service govern your use of our healthcare services and website. By accessing our services, you agree to these terms.
+        </p>
+
+        <h2>Medical Services Agreement</h2>
+        <p>By receiving care at {company.name}, you acknowledge and agree that:</p>
+        <ul>
+          <li>Our providers will use their professional judgment in providing care</li>
+          <li>No guarantee of specific outcomes can be made</li>
+          <li>You will receive information about your diagnosis and treatment options</li>
+          <li>You have the right to accept or refuse recommended treatments</li>
+        </ul>
+
+        <h2>Patient Responsibilities</h2>
+        <p>As a patient, you agree to:</p>
+        <ul>
+          <li>Provide accurate and complete health information</li>
+          <li>Inform us of any changes to your health, medications, or allergies</li>
+          <li>Follow agreed-upon treatment plans or inform us if you cannot</li>
+          <li>Keep scheduled appointments or provide adequate notice for cancellations</li>
+          <li>Treat staff and other patients with respect</li>
+          <li>Pay for services as agreed</li>
+        </ul>
+
+        <h2>Appointment Policy</h2>
+        <h3>Scheduling</h3>
+        <p>Appointments can be scheduled online, by phone at {company.phone}, or in person at any of our locations.</p>
+
+        <h3>Cancellation Policy</h3>
+        <ul>
+          <li>Please provide at least 24 hours notice for cancellations</li>
+          <li>Repeated no-shows may result in a missed appointment fee</li>
+          <li>Same-day cancellations may be subject to a cancellation fee</li>
+        </ul>
+
+        <h3>Late Arrivals</h3>
+        <p>If you arrive more than 15 minutes late, your appointment may need to be rescheduled to ensure adequate care time for all patients.</p>
+
+        <h2>Financial Responsibility</h2>
+        
+        <h3>Insurance</h3>
+        <ul>
+          <li>We participate with most major insurance plans</li>
+          <li>You are responsible for verifying your coverage and benefits</li>
+          <li>Copays and deductibles are due at the time of service</li>
+          <li>We will submit claims to your insurance on your behalf</li>
+        </ul>
+
+        <h3>Self-Pay</h3>
+        <p>For patients without insurance or for non-covered services:</p>
+        <ul>
+          <li>Payment is due at the time of service</li>
+          <li>We accept cash, check, and major credit cards</li>
+          <li>Payment plans may be available for significant balances</li>
+        </ul>
+
+        <h3>Collections</h3>
+        <p>Accounts with balances over 90 days may be sent to collections. Patients will receive multiple notices before any collection action.</p>
+
+        <h2>Emergency Services</h2>
+        <p><strong>If you are experiencing a medical emergency, call 911 or go to the nearest emergency room immediately.</strong></p>
+        <p>Our clinics are not equipped to handle life-threatening emergencies. Conditions requiring emergency care include:</p>
+        <ul>
+          <li>Chest pain or difficulty breathing</li>
+          <li>Severe bleeding or trauma</li>
+          <li>Signs of stroke</li>
+          <li>Severe allergic reactions</li>
+          <li>Loss of consciousness</li>
+        </ul>
+
+        <h2>Website Terms</h2>
+        <p>By using our website, you agree that:</p>
+        <ul>
+          <li>Content is for informational purposes and is not medical advice</li>
+          <li>You will not misuse the site or attempt unauthorized access</li>
+          <li>We may update the site and these terms at any time</li>
+        </ul>
+
+        <h2>Limitation of Liability</h2>
+        <p>To the extent permitted by law, {company.name} shall not be liable for indirect, incidental, or consequential damages arising from the use of our services or website.</p>
+
+        <h2>Contact Information</h2>
+        <p>Questions about these terms? Contact us:</p>
+        <p>
+          {company.name}<br />
+          Phone: {company.phone}<br />
+          Email: {company.email}
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

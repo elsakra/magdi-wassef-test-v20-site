@@ -1,0 +1,68 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeader from '@/components/SectionHeader.astro';
+import LocationCard from '@/components/LocationCard.astro';
+import Button from '@/components/Button.astro';
+import siteData from '@/data/site.json';
+import { getCollection } from 'astro:content';
+
+const locations = await getCollection('locations');
+const sortedLocations = locations.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+const { sections } = siteData;
+---
+
+<BaseLayout title="Locations">
+  <!-- Hero -->
+  <section class="pt-32 pb-16 bg-gradient-to-b from-primary-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="font-display text-4xl sm:text-5xl font-bold text-slate-900">
+          {sections.locations?.headline || "Our Locations"}
+        </h1>
+        {sections.locations?.description && (
+          <p class="mt-6 text-xl text-slate-600 leading-relaxed">
+            {sections.locations.description}
+          </p>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations Grid -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sortedLocations.map((location) => (
+          <LocationCard
+            name={location.data.name}
+            address={location.data.address}
+            city={location.data.city}
+            state={location.data.state}
+            zip={location.data.zip}
+            phone={location.data.phone}
+            image={location.data.image}
+            acceptingNewPatients={location.data.acceptingNewPatients}
+            href={`/locations/${location.slug}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-primary-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
+        Ready to visit us?
+      </h2>
+      <p class="mt-4 text-xl text-primary-200">
+        Schedule your appointment at any of our convenient locations.
+      </p>
+      <div class="mt-10">
+        <Button href="/contact" style="white" size="lg">
+          Book an Appointment
+        </Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
